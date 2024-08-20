@@ -1,8 +1,7 @@
-# @Time    : 2022/10/20 18:26
-# @Author  : Logan.Jin | www.loganjin.cn
+# @Time    : 2024/08/20 16:18:20
+# @Author  : phantom
 # @Project : Zerotier
 # @FileName: docker-compose.yml
-# @Annotation: 转载请保留来源
 version: '3.0'
 services:
     ztncui:
@@ -13,14 +12,15 @@ services:
             - MYDOMAIN=
             - HTTP_PORT=3000
             - HTTPS_PORT=3443
-            - ZTNCUI_PASSWD=loganjin.cn
+            - ZTNCUI_PASSWD=
             - NODE_ENV=production
             - HTTP_ALL_INTERFACES=true
         ports:
-            - '3000:3000'
-            - '9993:9993'
-            - '9993:9993/udp'
-            - '3180:3180'
+            - '13000:3000'
+            - '13443:3443'
+            - '19993:9993'
+            - '19993:9993/udp'
+            - '13180:3180'
         volumes:
             - './zerotier-one:/var/lib/zerotier-one'
             - './ztncui/etc:/opt/key-networks/ztncui/etc'
