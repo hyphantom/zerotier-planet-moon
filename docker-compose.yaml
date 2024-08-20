@@ -24,4 +24,9 @@ services:
         volumes:
             - './zerotier-one:/var/lib/zerotier-one'
             - './ztncui/etc:/opt/key-networks/ztncui/etc'
-        image: loganjindev/zerotier-ztncui
+        image: registry.cn-shanghai.aliyuncs.com/logandev/zerotier-ztncui:latest
+
+networks:
+    hostnet:
+        external: true
+        name: host
